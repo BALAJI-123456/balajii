@@ -1,0 +1,27 @@
+
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Clone Repo') {
+            steps {
+                echo 'Repository cloned successfully'
+            }
+        }
+
+        stage('Compile Java') {
+            steps {
+                echo 'Compiling Java program'
+                sh 'javac hello.java'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                echo 'Running Java application'
+                sh 'java hello'
+            }
+        }
+    }
+}
